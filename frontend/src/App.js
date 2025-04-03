@@ -2,9 +2,8 @@ import { Route, Routes, Link } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import BookDetails from "./pages/BookDetails";
-import React, { useState } from "react";
 
-
+function App() {
 return (
     <>
       <div style={{ backgroundColor: "white" }}>
@@ -44,6 +43,6 @@ return (
       </div>
     </>
   );
-//}
+}
 
 export default App;
