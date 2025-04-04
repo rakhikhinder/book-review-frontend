@@ -3,7 +3,6 @@ import "./App.css";
 import Home from "./pages/Home";
 import BookDetails from "./pages/BookDetails";
 import React, { useState } from "react";
-
 function App() {
     const [isOpen, setIsOpen] = useState(false);
   
@@ -44,9 +43,8 @@ function App() {
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/bookDetails" element={<BookDetails />} />
-
-          
           </Routes>
+
       </div>
     </>
   );
