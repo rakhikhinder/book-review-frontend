@@ -3,6 +3,8 @@ import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom';
 import { FaStar, FaThumbsUp, FaThumbsDown } from 'react-icons/fa';
 
+
+
 const BookDetails = () => {
     const location = useLocation();
     const { title, price, image } = location.state || {}; 
@@ -50,23 +52,54 @@ const BookDetails = () => {
                             </Button>
                         </div>
                         
-
-             <Row className="mt-4">
-                <Col>
-                    <h4>Reviews</h4>
-                    <Card>
-                        <Card.Body>
-                            <strong>Alice:</strong> A masterpiece!
-                        </Card.Body>
-                    </Card>
-                    <Card>
-                        <Card.Body>
-                            <strong>Bob:</strong> Loved the symbolism.
-                        </Card.Body>
-                    </Card>
-                </Col>
-            </Row>
-        </Container>
+                        <Button variant="primary" size="lg">Buy No</Button>
+                    </Col>
+                </Row>
+                
+                <Row className="mt-4">
+                    <Col>
+                        <h4>Reviews</h4>
+                        <Card className="mb-2">
+                            <Card.Body>
+                                <strong>Alice:</strong> A masterpiece!
+                            </Card.Body>
+                        </Card>
+                        <Card>
+                            <Card.Body>
+                                <strong>Bob:</strong> Loved the symbolism.
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
+            </Container>
+            
+            {/* Responsive Footer */}
+            <footer className="bg-dark text-white text-center py-3 mt-5">
+                <Container>
+                    <Row>
+                        <Col>
+                            <h5>Follow Us</h5>
+                            <div>
+                                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white me-3">
+                                    <FaFacebook size={24} />
+                                </a>
+                                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white me-3">
+                                    <FaInstagram size={24} />
+                                </a>
+                                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white">
+                                    <FaTwitter size={24} />
+                                </a>
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row className="mt-2">
+                        <Col>
+                            <p>&copy; 2025 Book Review. All rights reserved.</p>
+                        </Col>
+                    </Row>
+                </Container>
+            </footer>
+        </>
     );
 };
 
