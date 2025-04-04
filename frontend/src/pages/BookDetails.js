@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom';
+import { FaStar, FaThumbsUp, FaThumbsDown, FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const BookDetails = () => {
     const location = useLocation();
     const { title, price, image } = location.state || {}; 
+    const [upvotes, setUpvotes] = useState(0);
+    const [downvotes, setDownvotes] = useState(0);
 
     return (
         <Container className="mt-4">
@@ -22,7 +25,17 @@ const BookDetails = () => {
                 </Col>
             </Row>
 
-            <Row className="mt-4">
+                       <div className="mb-3">
+                             <Button variant="success" className="me-2" onClick={() => setUpvotes(upvotes + 1)}>
+                                <FaThumbsUp /> {upvotes}
+                            </Button>
+                            <Button variant="danger" onClick={() => setDownvotes(downvotes + 1)}>
+                                <FaThumbsDown /> {downvotes}
+                            </Button>
+                        </div>
+                        
+
+             <Row className="mt-4">
                 <Col>
                     <h4>Reviews</h4>
                     <Card>
