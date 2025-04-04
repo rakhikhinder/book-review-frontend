@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom';
-import { FaStar, FaThumbsUp, FaThumbsDown, FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaStar, FaThumbsUp, FaThumbsDown } from 'react-icons/fa';
 
 const BookDetails = () => {
     const location = useLocation();
     const { title, price, image } = location.state || {}; 
+    const [rating, setRating] = useState(0);
     const [upvotes, setUpvotes] = useState(0);
     const [downvotes, setDownvotes] = useState(0);
+
+    const handleRating = (index) => {
+        setRating(index);
+    };
 
     return (
         <Container className="mt-4">
@@ -24,7 +29,18 @@ const BookDetails = () => {
                     <Button variant="primary">Buy Now</Button>
                 </Col>
             </Row>
-
+                        <div className="mb-3">
+                            <strong>Rate this Book:</strong>
+                            <div>
+                                {[1, 2, 3, 4, 5].map((index) => (
+                                    <FaStar 
+                                        key={index} 
+                                        onClick={() => handleRating(index)} 
+                                        style={{ cursor: 'pointer', color: index <= rating ? 'gold' : 'gray' }} 
+                                    />
+                                ))}
+                            </div>
+                        </div>
                        <div className="mb-3">
                              <Button variant="success" className="me-2" onClick={() => setUpvotes(upvotes + 1)}>
                                 <FaThumbsUp /> {upvotes}
