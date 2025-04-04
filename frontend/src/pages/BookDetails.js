@@ -52,7 +52,7 @@ const BookDetails = () => {
                             </Button>
                         </div>
                         
-                        <Button variant="primary" size="lg">Buy Now</Button>
+                        <Button variant="primary" size="lg">Buy No</Button>
                     </Col>
                 </Row>
                 
