@@ -45,7 +45,6 @@ function App() {
                   Home
                 </Link>
               </li>
-
                {/*Dropdown for Sign Up*/}
               <div
                 className="nav-item dropdown"
@@ -138,7 +137,6 @@ function App() {
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/bookDetails" element={<BookDetails />} />
-
           {/* Authentication Routes */}
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
@@ -152,4 +150,6 @@ function App() {
   );
 }
 
+
 export default App;
+
