@@ -1,14 +1,9 @@
-import React, { useState } from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import { useLocation } from "react-router-dom";
-import {
-  FaStar,
-  FaThumbsUp,
-  FaThumbsDown,
-  FaFacebook,
-  FaInstagram,
-  FaTwitter,
-} from "react-icons/fa";
+import React, { useState } from 'react';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { useLocation } from 'react-router-dom';
+import { FaStar, FaThumbsUp, FaThumbsDown, FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
+
+
 
 const BookDetails = () => {
   const location = useLocation();
