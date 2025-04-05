@@ -27,7 +27,7 @@ const Home = () => {
 
       // Fetch top books for featured section
       const topResponse = await fetch(
-        "http://127.0.0.1:3000/api/books?limit=3"
+        "http://127.0.0.1:4000/api/books"
       );
 
       if (!topResponse.ok) {
@@ -36,7 +36,7 @@ const Home = () => {
 
       // Fetch books for slider (different limit)
       const sliderResponse = await fetch(
-        "http://127.0.0.1:3000/api/books?limit=5"
+        "http://127.0.0.1:4000/api/books"
       );
 
       if (!sliderResponse.ok) {

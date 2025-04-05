@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import BookDetails from "./pages/BookDetails";
 import React, { useState, useEffect } from "react";
 import ResetPassword from "./pages/auth/Resetpassword";
-import Profile from "./pages/auth/Profile";
+import Profile from "./pages/auth/Profile"
 import UpdateProfile from "./pages/auth/Updateprofile";
 import Logout from "./pages/auth/Logout";
 import AuthModal from "./components/AuthModal";

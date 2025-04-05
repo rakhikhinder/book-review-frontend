@@ -88,7 +88,7 @@ const BookDetails = () => {
           setBook(state.book);
         } else {
           const bookResponse = await fetch(
-            `http://127.0.0.1:3000/api/books/${bookId}`
+            `http://127.0.0.1:4000/api/books/${bookId}`
           );
           if (!bookResponse.ok) throw new Error("Failed to load book");
           const bookData = await bookResponse.json();
@@ -96,7 +96,7 @@ const BookDetails = () => {
         }
 
        const reviewsResponse = await fetch(
-         `http://127.0.0.1:3000/api/reviews/book/${bookId}`
+         `http://127.0.0.1:4000/api/reviews/book/${bookId}`
        );
 
 
@@ -125,7 +125,7 @@ const BookDetails = () => {
       if (userVote === type) return;
 
       const response = await fetch(
-        `http://127.0.0.1:3000/api/books/${bookId}/vote`,
+        `http://127.0.0.1:4000/api/books/${bookId}/vote`,
         {
           method: "POST",
           headers: {
@@ -166,7 +166,7 @@ const BookDetails = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("http://127.0.0.1:3000/api/reviews", {
+      const response = await fetch("http://127.0.0.1:4000/api/reviews", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -213,7 +213,7 @@ const BookDetails = () => {
     setIsDeleting(true);
     try {
       const response = await fetch(
-        `http://127.0.0.1:3000/api/reviews/${reviewToDelete._id}`,
+        `http://127.0.0.1:4000/api/reviews/${reviewToDelete._id}`,
         {
           method: "DELETE",
           headers: {
