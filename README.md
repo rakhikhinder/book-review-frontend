@@ -1,10 +1,10 @@
-# Book Review Website
+# GoodReads Store
 
-[ Book-review-frontend is a responsive React.js application](assets/images/book.jpg)
+[GoodReads Store is a responsive React.js application](assets/images/book.jpg)
 
 ## Project Overview
 
-The **Frontend** for the **Book Review Website** allows users to explore, review, and purchase books. Built using **React.js** and **React Bootstrap**, the frontend is fully responsive and integrates seamlessly with the backend for real-time data handling. The homepage features a carousel of books, with dynamic book details pages and options for user sign-up, reviews, and ratings.
+The **Frontend** for the **GoodReads Store Website** allows users to explore, review, and purchase books. Built using **React.js** and **React Bootstrap**, the frontend is fully responsive and integrates seamlessly with the backend for real-time data handling. The homepage features a carousel of books, with dynamic book details pages and options for user sign-up, reviews, and ratings.
 
 
 
@@ -43,7 +43,7 @@ The **Frontend** for the **Book Review Website** allows users to explore, review
 * [Acknowledgments](#acknowledgments)
 
 - - -
-[Book-review-aap](Todo)
+[GoodReads Store](Todo)
 
 ## User Experience (UX)
 
@@ -64,7 +64,6 @@ The **Frontend** for the **Book Review Website** allows users to explore, review
 
 * Allows users to rate and review books, helping others make informed decisions and fostering community engagement.
 
-
 - - -
 
 ## Design
@@ -74,11 +73,11 @@ The color scheme for the Book Review Website is designed to create a clean, mode
 
 
 
-* Teal (#095847): This is the main color of the website, used for the navigation bar, primary buttons, and background accents. It evokes feelings of trust, sophistication, and calmness.
+* Sherwood Green (#03482d): This is the main color of the website, used for the navigation bar, primary buttons, and background accents. It evokes feelings of trust, sophistication, and calmness.
 
-* Yellow/Gold (#FFD700): Used for accent elements like call-to-action buttons (e.g., "Buy Now"), rating stars, and hover effects. This bright color adds a touch of vibrancy and draws attention to important actions.
+* Bright blue (#3671FC): Used for accent elements like call-to-action buttons (e.g., "Buy Now"), rating stars, and hover effects. This bright color adds a touch of vibrancy and draws attention to important actions.
 
-* Dark Blue (#003366): This color is used for footer backgrounds and secondary buttons, providing depth and contrast against lighter colors, ensuring readability and visual hierarchy.
+* Dimgrey (#555954): This color is used for footer backgrounds and secondary buttons, providing depth and contrast against lighter colors, ensuring readability and visual hierarchy.
 
 
 ### Typography
@@ -89,13 +88,13 @@ Google Fonts was used to import the chosen fonts for use in the site.
 
 [Almendra Font Example](documentation/almendra.webp)
 
-* For the body of the page I have used the google font [Quicksand](https://fonts.google.com/specimen/Quicksand?preview.text=The%20Quiz%20Arms%20THE%20QUIZ%20ARMS&preview.text_type=custom&query=quicksand). QuickSand is a sans-serif font which has lovely clean lines. I have chosen to use a sans-serif font for the body of the page as studies have found that sans-serif fonts are generally more legible to read on a screen.
+* For the body of the page I have used the google font [Quicksand](https://fonts.google.com/specimen/Quicksand?preview.text=The%20Quiz%20Arms%20THE%20QUIZ%20ARMS&preview.text_type=custom&query=quicksand). QuickSand and Montserrat is a sans-serif font which has lovely clean lines. I have chosen to use a sans-serif font for the body of the page as studies have found that sans-serif fonts are generally more legible to read on a screen.
 
 [Quicksand Font Example](documentation/quicksand.webp)
 
 ### Imagery
 
-As the website is called The Book-Review , I wanted to use a affiliated link for purchasing,review,and for vote and unvote.
+As the website is called GoodReads Store , I wanted to use a affiliated link for purchasing,review,and for vote and unvote.
 
 ### Wireframes
 
@@ -116,6 +115,10 @@ All Pages on the website are responsive and have:
 * The title of the site at the top of every page. This title also acts as a link back to the Book-review.
 
 * Every page will display a custom cursor when on a button. This feature is not available on mobile touch devices.
+  
+* Having Popular picks and featured Books are on the home page that enhace the user experience and easy to choose the best books.
+
+* Collections of best books you purchased and also see the rating of the books and reviews.
 
 
 #### The Home Page
@@ -203,7 +206,7 @@ HTML, CSS, Javascript
 
 ### Deployment
 
-The site is deployed using GitHub Pages - [Book-review](Todo).
+The site is deployed using GitHub Pages - [GoodReads Store](Todo).
 
 To Deploy the site using GitHub Pages:
 
@@ -229,7 +232,7 @@ To fork the repository:
 To clone the repository:
 
 1. Log in (or sign up) to GitHub.
-2. Go to the repository for this project, [rakhikhinder/book-review-frontend]()
+2. Go to the repository for this project, [rakhikhinder/book-review-frontend](https://github.com/rakhikhinder/book-review-frontend.git)
 3. Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
 4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
 5. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.
