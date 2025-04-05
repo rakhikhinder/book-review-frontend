@@ -20,7 +20,7 @@ function SignUp({ onSuccess }) {
     setError("");
 
     try {
-      const res = await fetch("http://127.0.0.1:3000/api/users", {
+      const res = await fetch("http://127.0.0.1:4000/api/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
