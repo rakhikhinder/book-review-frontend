@@ -1,6 +1,6 @@
 # GoodReads Store
 
-[GoodReads Store is a responsive React.js application](assets/images/book.jpg)
+![GoodReads Store is a responsive React.js application](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/photo_6307711004267627941_y.jpg)
 
 ## Project Overview
 
@@ -43,7 +43,7 @@ The **Frontend** for the **GoodReads Store Website** allows users to explore, re
 * [Acknowledgments](#acknowledgments)
 
 - - -
-[GoodReads Store](Todo)
+![GoodReads Store](Todo)
 
 ## User Experience (UX)
 
