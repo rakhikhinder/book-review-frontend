@@ -257,8 +257,12 @@ Please refer to [TESTING.md](TESTING.md) file for all testing carried out.
 
 I would like to acknowledge the following people:
 
-* Manish Pal - For Frontend development suggestions and code reviews.
+* Jubril Akolade - A big thanks to my mentor Jubril Akolade who help me understanding what my project is and creating a vision for it with me.
 
-* Shiwani baghel - Frontend UI design and feedback.
+* Manish & Shiwani baghel - I thank my friends Manish and Shiwani for UI suggestions and feedback.
+  
+* Deepak Bajaj   - I thank Deepak for helping me with backend data and for testing website again and again for me.
+
+
 
 
