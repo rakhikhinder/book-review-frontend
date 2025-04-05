@@ -1,30 +1,75 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function ForgotPassword() {
-  const [email, setEmail] = useState('');
+  const [formData, setFormData] = useState({ email: "", new_password: "" });
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Reset Password request for:', email);
-    // Handle forgot password logic here
+    setMessage("");
+    setError("");
+
+    try {
+      const response = await fetch(
+        "http://127.0.0.1:3000/api/users/reset_password",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const data = await response.json();
+      if (response.ok) {
+        setMessage(
+          data.message || `Password reset successful for ${formData.email}`
+        );
+      } else {
+        setError(data.error || "Something went wrong. Try again.");
+      }
+    } catch (err) {
+      setError("Network error. Please try again.");
+    }
   };
 
   return (
-    <div className="card p-4">
-      <h2>Forgot Password</h2>
+    <div>
+      {message && <div className="alert alert-success">{message}</div>}
+      {error && <div className="alert alert-danger">{error}</div>}
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <label htmlFor="email" className="form-label">Enter your Email</label>
+          <label className="form-label">Email</label>
           <input
             type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            name="email"
             className="form-control"
+            value={formData.email}
             required
+            onChange={handleChange}
           />
         </div>
-        <button type="submit" className="btn btn-primary w-100">Reset Password</button>
+        <div className="mb-3">
+          <label className="form-label">New Password</label>
+          <input
+            type="password"
+            name="new_password"
+            className="form-control"
+            value={formData.new_password}
+            required
+            onChange={handleChange}
+          />
+        </div>
+        <button className="btn btn-primary w-100" type="submit">
+          Reset Password
+        </button>
       </form>
     </div>
   );
