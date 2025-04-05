@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { API_BASE_URL } from "../api";
 
 function ResetPassword() {
   const [email, setEmail] = useState("");
@@ -12,17 +13,14 @@ function ResetPassword() {
     setError("");
 
     try {
-      const response = await fetch(
-        "http://127.0.0.1:3000/api/users/reset_password",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            email: email,
-            new_password: newPassword,
-          }),
-        }
-      );
+      const response = await fetch(`${API_BASE_URL}/users/reset_password`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: email,
+          new_password: newPassword,
+        }),
+      });
 
       const data = await response.json();
 

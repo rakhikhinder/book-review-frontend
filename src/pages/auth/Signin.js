@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { API_BASE_URL } from "../api";
 
 function SignIn({ onSuccess, onForgotPassword }) {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -14,7 +15,7 @@ function SignIn({ onSuccess, onForgotPassword }) {
     setError("");
 
     try {
-      const response = await fetch("http://127.0.0.1:4000/api/login", {
+      const response = await fetch(`${API_BASE_URL}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -23,10 +24,10 @@ function SignIn({ onSuccess, onForgotPassword }) {
       const data = await response.json();
 
       if (response.ok) {
-        // Store all necessary authentication data
-        localStorage.setItem("token", data.token); // Make sure your API returns a token
+        localStorage.setItem("token", data.token);
         localStorage.setItem("user_id", data.user_id);
         localStorage.setItem("user", JSON.stringify(data.user));
+        window.dispatchEvent(new Event("userLoggedIn"));
         if (onSuccess) onSuccess();
       } else {
         setError(data.message || "Login failed");

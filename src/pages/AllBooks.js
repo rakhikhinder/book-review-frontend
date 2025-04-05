@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
+import { API_BASE_URL } from "../api";
 
 const AllBooks = () => {
   const [books, setBooks] = useState([]);
@@ -11,16 +12,12 @@ const AllBooks = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:3000/api/books", {
+        const response = await fetch(`${API_BASE_URL}/books`, {
           method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers: { "Content-Type": "application/json" },
         });
 
-        if (!response.ok) {
-          throw new Error("Failed to fetch books");
-        }
+        if (!response.ok) throw new Error("Failed to fetch books");
 
         const data = await response.json();
         setBooks(data);
@@ -34,9 +31,7 @@ const AllBooks = () => {
     fetchBooks();
   }, []);
 
-  const handleBookClick = (bookId) => {
-    navigate(`/bookDetails/${bookId}`);
-  };
+  const handleBookClick = (bookId) => navigate(`/bookDetails/${bookId}`);
 
   if (loading) {
     return (
