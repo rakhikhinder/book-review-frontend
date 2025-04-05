@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../api";
 
 function UpdateProfile() {
   const [formData, setFormData] = useState({
@@ -26,31 +27,22 @@ function UpdateProfile() {
     setSuccess("");
 
     try {
-      // Get user_id from localStorage
       const userId = localStorage.getItem("user_id");
-      if (!userId) {
-        throw new Error("User not authenticated");
-      }
+      if (!userId) throw new Error("User not authenticated");
 
-      // Prepare the payload with all form data
       const payload = {
         name: formData.name,
         email: formData.email,
-        ...(formData.password && { password: formData.password }), // Only include if provided
+        ...(formData.password && { password: formData.password }),
         phone: formData.phone,
         address: formData.address,
       };
 
-      const response = await fetch(
-        `http://127.0.0.1:3000/api/users/${userId}`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(payload),
-        }
-      );
+      const response = await fetch(`${API_BASE_URL}/users/${userId}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -85,7 +77,6 @@ function UpdateProfile() {
                   ></button>
                 </div>
               )}
-
               {success && (
                 <div className="alert alert-success alert-dismissible fade show">
                   {success}
@@ -96,7 +87,6 @@ function UpdateProfile() {
                   ></button>
                 </div>
               )}
-
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label htmlFor="name" className="form-label">
@@ -113,7 +103,6 @@ function UpdateProfile() {
                     required
                   />
                 </div>
-
                 <div className="mb-3">
                   <label htmlFor="email" className="form-label">
                     Email Address
@@ -129,7 +118,6 @@ function UpdateProfile() {
                     required
                   />
                 </div>
-
                 <div className="mb-3">
                   <label htmlFor="password" className="form-label">
                     New Password
@@ -145,7 +133,6 @@ function UpdateProfile() {
                   />
                   <div className="form-text">Must be at least 8 characters</div>
                 </div>
-
                 <div className="row">
                   <div className="col-md-6 mb-3">
                     <label htmlFor="phone" className="form-label">
@@ -162,7 +149,6 @@ function UpdateProfile() {
                     />
                   </div>
                 </div>
-
                 <div className="mb-4">
                   <label htmlFor="address" className="form-label">
                     Address
@@ -177,7 +163,6 @@ function UpdateProfile() {
                     placeholder="Enter your address"
                   ></textarea>
                 </div>
-
                 <div className="d-grid gap-2">
                   <button
                     type="submit"

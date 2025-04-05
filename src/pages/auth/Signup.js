@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { API_BASE_URL } from "../api";
 
 function SignUp({ onSuccess }) {
   const [formData, setFormData] = useState({
@@ -8,7 +9,6 @@ function SignUp({ onSuccess }) {
   });
 
   const [error, setError] = useState("");
-
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,7 +20,7 @@ function SignUp({ onSuccess }) {
     setError("");
 
     try {
-      const res = await fetch("http://127.0.0.1:4000/api/users", {
+      const res = await fetch(`${API_BASE_URL}/users`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -31,6 +31,7 @@ function SignUp({ onSuccess }) {
       if (res.ok) {
         localStorage.setItem("user_id", data.user_id);
         localStorage.setItem("user", JSON.stringify(data.user));
+        window.dispatchEvent(new Event("userLoggedIn"));
         if (onSuccess) onSuccess();
       } else {
         setError(data.message || "Signup failed");

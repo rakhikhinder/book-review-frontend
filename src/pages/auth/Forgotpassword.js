@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { API_BASE_URL } from "../api";
 
 function ForgotPassword() {
   const [formData, setFormData] = useState({ email: "", new_password: "" });
@@ -16,16 +17,13 @@ function ForgotPassword() {
     setError("");
 
     try {
-      const response = await fetch(
-        "http://127.0.0.1:3000/api/users/reset_password",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await fetch(`${API_BASE_URL}/users/reset_password`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
       const data = await response.json();
       if (response.ok) {

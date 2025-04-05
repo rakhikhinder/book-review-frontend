@@ -2,9 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import { Carousel } from "react-bootstrap";
-
-const categories = ["Self-help", "Fiction", "Business", "Biographies"];
-
+import { API_BASE_URL } from "./api";
 const Home = () => {
   const [searchInput, setSearchInput] = useState("");
   const [placeholder, setPlaceholder] = useState("");
@@ -20,28 +18,14 @@ const Home = () => {
   ];
   const navigate = useNavigate();
 
-  // Memoized fetch function
   const fetchBooks = useCallback(async () => {
     try {
       setLoading(true);
+      const topResponse = await fetch(`${API_BASE_URL}/books?limit=3`);
+      if (!topResponse.ok) throw new Error("Failed to fetch books");
 
-      // Fetch top books for featured section
-      const topResponse = await fetch(
-        "http://127.0.0.1:4000/api/books"
-      );
-
-      if (!topResponse.ok) {
-        throw new Error("Failed to fetch books");
-      }
-
-      // Fetch books for slider (different limit)
-      const sliderResponse = await fetch(
-        "http://127.0.0.1:4000/api/books"
-      );
-
-      if (!sliderResponse.ok) {
-        throw new Error("Failed to fetch slider books");
-      }
+      const sliderResponse = await fetch(`${API_BASE_URL}/books?limit=5`);
+      if (!sliderResponse.ok) throw new Error("Failed to fetch slider books");
 
       const topData = await topResponse.json();
       const sliderData = await sliderResponse.json();
@@ -57,17 +41,12 @@ const Home = () => {
 
   useEffect(() => {
     fetchBooks();
-
-    // Placeholder rotation logic
     let currentIndex = 0;
     const interval = setInterval(() => {
       setPlaceholder(samplePlaceholders[currentIndex]);
       currentIndex = (currentIndex + 1) % samplePlaceholders.length;
     }, 2000);
-
-    return () => {
-      clearInterval(interval);
-    };
+    return () => clearInterval(interval);
   }, [fetchBooks]);
 
   const handleBookClick = (book) => {
@@ -107,7 +86,6 @@ const Home = () => {
           onChange={(e) => setSearchInput(e.target.value)}
         />
 
-        {/* Image Slider */}
         {sliderBooks.length > 0 && (
           <div className="mb-5">
             <h2 className="mb-3 text-black">Popular Picks</h2>
@@ -118,16 +96,18 @@ const Home = () => {
                   onClick={() => handleBookClick(book)}
                   style={{ cursor: "pointer" }}
                 >
-                  <img
-                    className="d-block w-100"
-                    src={book.image || "https://via.placeholder.com/800x400"}
-                    alt={book.title}
-                    style={{
-                      height: "400px",
-                      objectFit: "cover",
-                      borderRadius: "10px",
-                    }}
-                  />
+                  <div className="d-flex justify-content-center">
+                    <img
+                      src={book.image || "https://via.placeholder.com/300x400"}
+                      alt={book.title}
+                      style={{
+                        height: "400px",
+                        width: "auto",
+                        objectFit: "contain",
+                        borderRadius: "10px",
+                      }}
+                    />
+                  </div>
                   <Carousel.Caption className="bg-dark bg-opacity-75 rounded p-3">
                     <h3>{book.title}</h3>
                     <p>by {book.author_name}</p>
@@ -161,7 +141,12 @@ const Home = () => {
                     src={book.image || "https://via.placeholder.com/300x400"}
                     className="card-img-top"
                     alt={book.title}
-                    style={{ height: "300px", objectFit: "cover" }}
+                    style={{
+                      height: "300px",
+                      width: "auto",
+                      objectFit: "contain",
+                      margin: "0 auto",
+                    }}
                   />
                   <div className="card-body">
                     <h5 className="card-title text-success">{book.title}</h5>
@@ -193,20 +178,6 @@ const Home = () => {
               </div>
             </div>
           )}
-        </div>
-
-        <h2 className="mb-3 text-black">Must Explore</h2>
-        <div className="row g-4 mb-5">
-          {categories.map((cat, i) => (
-            <div className="col-6 col-md-3" key={i}>
-              <div
-                className="text-white text-center p-3 rounded shadow-sm"
-                style={{ backgroundColor: "#6f42c1" }}
-              >
-                {cat}
-              </div>
-            </div>
-          ))}
         </div>
       </div>
 
