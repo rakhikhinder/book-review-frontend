@@ -11,7 +11,8 @@
 | 4 | Vote/Upvote Not Counting & Rating Stale.| Used await on POST to Firebase:await updateDoc(docRef, { votes: increment(1) }).Added useEffect to refresh ratings: [votes] dependency.Debounced rapid clicks with lodash.debounce.
  |
 
-![Update profile](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/photo_6307711004267627936_y.jpg)
+![Sign In](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/photo_6307711004267627938_y.jpg)
+
 ### Known Bugs
 
 * When viewing on screens that use touch rather than a cursor, the colour change for the Submit Review button selected is not immediately obvious as the hover state remains on the button. If the user clicks away from the button the colour can then been seen.
@@ -21,9 +22,7 @@
 * When friends tested the site they found that very rarely site will get stuck on a home page, and it will not populate a book-description but not not the buy button functions and vote and upvote. 
 
 - - -
-
-## Credits
-
+![Update profile](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/photo_6307711004267627936_y.jpg)
 ### Code Used
 
 * I used [this You Tube tutorial](https://www.youtube.com/watch?v=0iCmz90nR9k) to learn how to create a website and make the book store.
