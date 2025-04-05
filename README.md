@@ -52,8 +52,6 @@ The **Frontend** for the **GoodReads Store Website** allows users to explore, re
 *  Easy-to-use interface with a homepage carousel for quick book browsing and clear calls-to-action for exploring more
 ![GoodReads Store is a responsive React.js application](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/photo_6307711004267628032_y.jpg)
 ![GoodReads Store is a responsive React.js application](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/photo_6307711004267628028_x.jpg)
-![GoodReads Store is a responsive React.js application](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/photo_6307711004267628029_y.jpg)
-![GoodReads Store is a responsive React.js application](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/photo_6307711004267628030_y.jpg)
 
 #### Responsive Design: 
 
@@ -254,6 +252,8 @@ To clone the repository:
 
 ## Testing
 
+![GoodReads Store is a responsive React.js application](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/photo_6307711004267628029_y.jpg)
+![GoodReads Store is a responsive React.js application](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/photo_6307711004267628030_y.jpg)
 Please refer to [TESTING.md](TESTING.md) file for all testing carried out.
 
 ### Acknowledgments
