@@ -1,318 +1,217 @@
-import React from "react";
-import { Carousel } from "react-bootstrap";
-import { Link } from "react-router-dom"; // Import Link for navigation
-import bookImage from "../assets/images/backimageslide.png";
-import backImageSlide from "../assets/images/backimageslide.png";
-import book1 from "../assets/images/book1.jpg";
-import book2 from "../assets/images/book2.jpg";
-import book3 from "../assets/images/book3.jpg";
-import book4 from "../assets/images/book4.jpg";
-import book5 from "../assets/images/book5.jpg";
-import book6 from "../assets/images/book6.jpg";
-import book7 from "../assets/images/book7.jpg";
-import book8 from "../assets/images/book8.jpg";
-import book9 from "../assets/images/book9.jpg";
-import book10 from "../assets/images/book10.jpg";
-import book11 from "../assets/images/book11.jpg";
-import book12 from "../assets/images/book12.jpg";
+import React, { useState, useEffect, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
+import { Carousel } from "react-bootstrap";
+
+const categories = ["Self-help", "Fiction", "Business", "Biographies"];
 
 const Home = () => {
-  return (
-    <>
-      {/* Welcome Section */}
-      <div style={{ textAlign: "center", marginTop: "20px" }}>
-        <h1>Welcome to the Book Review App</h1>
-        <p>Discover and review your favorite books!</p>
-      </div>
+  const [searchInput, setSearchInput] = useState("");
+  const [placeholder, setPlaceholder] = useState("");
+  const [topBooks, setTopBooks] = useState([]);
+  const [sliderBooks, setSliderBooks] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const samplePlaceholders = [
+    "Atomic Habits",
+    "The Alchemist",
+    "Rich Dad Poor Dad",
+    "Deep Work",
+  ];
+  const navigate = useNavigate();
 
-      {/* Carousel Section */}
-      <Carousel>
-        <Carousel.Item>
-          <div
-            style={{ position: "relative", color: "#fff", textAlign: "center" }}
-          >
-            <img
-              className="d-block w-100"
-              src={backImageSlide}
-              alt="Background Image"
-              style={{ height: "400px", objectFit: "cover" }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                top: "10%",
-                left: "50%",
-                transform: "translate(-50%, -10%)",
-                color: "#000",
-              }}
-            >
-              <h2>Featured Books</h2>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  gap: "20px",
-                }}
-              >
-                <Link
-                  to="/bookDetails"
-                  state={{ title: "Book 1", price: "$12.99", image: book1 }}
-                >
-                  <img src={book1} alt="Book 1" style={{ height: "200px" }} />
-                </Link>
-                <Link
-                  to="/bookDetails"
-                  state={{ title: "Book 2", price: "$15.99", image: book2 }}
-                >
-                  <img src={book2} alt="Book 2" style={{ height: "200px" }} />
-                </Link>
-                <Link
-                  to="/bookDetails"
-                  state={{ title: "Book 3", price: "$10.99", image: book3 }}
-                >
-                  <img src={book3} alt="Book 3" style={{ height: "200px" }} />
-                </Link>
-                <Link
-                  to="/bookDetails"
-                  state={{ title: "Book 4", price: "$20.00", image: book4 }}
-                >
-                  <img src={book4} alt="Book 4" style={{ height: "200px" }} />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </Carousel.Item>
-        <Carousel.Item>
-          <div
-            style={{ position: "relative", color: "#fff", textAlign: "center" }}
-          >
-            <img
-              className="d-block w-100"
-              src={backImageSlide}
-              alt="Background Image"
-              style={{ height: "400px", objectFit: "cover" }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                top: "10%",
-                left: "50%",
-                transform: "translate(-50%, -10%)",
-                color: "#000",
-              }}
-            >
-              <h2>Featured Books</h2>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  gap: "20px",
-                }}
-              >
-                <Link
-                  to="/bookDetails"
-                  state={{ title: "Book 1", price: "$12.99", image: book4 }}
-                >
-                  <img src={book1} alt="Book 1" style={{ height: "200px" }} />
-                </Link>
-                <Link
-                  to="/bookDetails"
-                  state={{ title: "Book 2", price: "$15.99", image: book5 }}
-                >
-                  <img src={book2} alt="Book 2" style={{ height: "200px" }} />
-                </Link>
-                <Link
-                  to="/bookDetails"
-                  state={{ title: "Book 3", price: "$10.99", image: book6 }}
-                >
-                  <img src={book3} alt="Book 3" style={{ height: "200px" }} />
-                </Link>
-                <Link
-                  to="/bookDetails"
-                  state={{ title: "Book 4", price: "$20.00", image: book7 }}
-                >
-                  <img src={book4} alt="Book 4" style={{ height: "200px" }} />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </Carousel.Item>
-        <Carousel.Item>
-          <div
-            style={{ position: "relative", color: "#fff", textAlign: "center" }}
-          >
-            {/* <img
-                            className='d-block w-100'
-                            src={backImageSlide}
-                            alt='Background Image'
-                            style={{ height: '400px', objectFit: 'cover' }}
-                        /> */}
-            <div
-              style={{
-                position: "absolute",
-                top: "10%",
-                left: "50%",
-                transform: "translate(-50%, -10%)",
-                color: "#000",
-              }}
-            >
-              <h2>Featured Books</h2>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  gap: "20px",
-                }}
-              >
-                <Link
-                  to="/bookDetails"
-                  state={{ title: "Book 1", price: "$12.99", image: book8 }}
-                >
-                  <img src={book1} alt="Book 1" style={{ height: "200px" }} />
-                </Link>
-                <Link
-                  to="/bookDetails"
-                  state={{ title: "Book 2", price: "$15.99", image: book9 }}
-                >
-                  <img src={book2} alt="Book 2" style={{ height: "200px" }} />
-                </Link>
-                <Link
-                  to="/bookDetails"
-                  state={{ title: "Book 3", price: "$10.99", image: book10 }}
-                >
-                  <img src={book3} alt="Book 3" style={{ height: "200px" }} />
-                </Link>
-                <Link
-                  to="/bookDetails"
-                  state={{ title: "Book 4", price: "$20.00", image: book11 }}
-                >
-                  <img src={book4} alt="Book 4" style={{ height: "200px" }} />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </Carousel.Item>
-        {/* Other Carousel Items (omitted for brevity) */}
-      </Carousel>
+  // Memoized fetch function
+  const fetchBooks = useCallback(async () => {
+    try {
+      setLoading(true);
 
-      {/* Book List Section */}
-      <div style={{ textAlign: "center", marginTop: "50px" }}>
-        <h2>Explore More Books</h2>
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            gap: "30px",
-          }}
-        >
-          <Link
-            to="/bookDetails"
-            state={{ title: "Book 1", price: "$12.99", image: book1 }}
-          >
-            <div style={{ width: "200px" }}>
-              <img src={book1} alt="Book 1" style={{ width: "100%" }} />
-              <h5>Book Title 1</h5>
-              <p>Price: $12.99</p>
-            </div>
-          </Link>
-          <Link
-            to="/bookDetails"
-            state={{ title: "Book 2", price: "$15.99", image: book2 }}
-          >
-            <div style={{ width: "200px" }}>
-              <img src={book2} alt="Book 2" style={{ width: "100%" }} />
-              <h5>Book Title 2</h5>
-              <p>Price: $15.99</p>
-            </div>
-          </Link>
-          <Link
-            to="/bookDetails"
-            state={{ title: "Book 5", price: "$12.99", image: book5 }}
-          >
-            <div style={{ width: "200px" }}>
-              <img src={book5} alt="Book 5" style={{ width: "100%" }} />
-              <h5>Book Title 3</h5>
-              <p>Price: $12.99</p>
-            </div>
-          </Link>
-          <Link
-            to="/bookDetails"
-            state={{ title: "Book 6", price: "$12.99", image: book6 }}
-          >
-            <div style={{ width: "200px" }}>
-              <img src={book6} alt="Book 6" style={{ width: "100%" }} />
-              <h5>Book Title 4</h5>
-              <p>Price: $12.99</p>
-            </div>
-          </Link>
-          <Link
-            to="/bookDetails"
-            state={{ title: "Book 7", price: "$12.99", image: book7 }}
-          >
-            <div style={{ width: "200px" }}>
-              <img src={book7} alt="Book 7" style={{ width: "100%" }} />
-              <h5>Book Title 5</h5>
-              <p>Price: $12.99</p>
-            </div>
-          </Link>
-          <Link
-            to="/bookDetails"
-            state={{ title: "Book 8", price: "$12.99", image: book8 }}
-          >
-            <div style={{ width: "200px" }}>
-              <img src={book8} alt="Book 8" style={{ width: "100%" }} />
-              <h5>Book Title 6</h5>
-              <p>Price: $12.99</p>
-            </div>
-          </Link>
-          <Link
-            to="/bookDetails"
-            state={{ title: "Book 9", price: "$12.99", image: book9 }}
-          >
-            <div style={{ width: "200px" }}>
-              <img src={book9} alt="Book 9" style={{ width: "100%" }} />
-              <h5>Book Title 9</h5>
-              <p>Price: $12.99</p>
-            </div>
-          </Link>
-          <Link
-            to="/bookDetails"
-            state={{ title: "Book 10", price: "$12.99", image: book10 }}
-          >
-            <div style={{ width: "200px" }}>
-              <img src={book10} alt="Book 9" style={{ width: "100%" }} />
-              <h5>Book Title 10</h5>
-              <p>Price: $12.99</p>
-            </div>
-          </Link>
-          <Link
-            to="/bookDetails"
-            state={{ title: "Book 11", price: "$12.99", image: book11 }}
-          >
-            <div style={{ width: "200px" }}>
-              <img src={book11} alt="Book 11" style={{ width: "100%" }} />
-              <h5>Book Title 11</h5>
-              <p>Price: $12.99</p>
-            </div>
-          </Link>
-          <Link
-            to="/bookDetails"
-            state={{ title: "Book 12", price: "$12.99", image: book12 }}
-          >
-            <div style={{ width: "200px" }}>
-              <img src={book12} alt="Book 12" style={{ width: "100%" }} />
-              <h5>Book Title 12</h5>
-              <p>Price: $12.99</p>
-            </div>
-          </Link>
-          {/* More books can be added similarly */}
+      // Fetch top books for featured section
+      const topResponse = await fetch(
+        "http://127.0.0.1:3000/api/books?limit=3"
+      );
+
+      if (!topResponse.ok) {
+        throw new Error("Failed to fetch books");
+      }
+
+      // Fetch books for slider (different limit)
+      const sliderResponse = await fetch(
+        "http://127.0.0.1:3000/api/books?limit=5"
+      );
+
+      if (!sliderResponse.ok) {
+        throw new Error("Failed to fetch slider books");
+      }
+
+      const topData = await topResponse.json();
+      const sliderData = await sliderResponse.json();
+
+      setTopBooks(topData);
+      setSliderBooks(sliderData);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchBooks();
+
+    // Placeholder rotation logic
+    let currentIndex = 0;
+    const interval = setInterval(() => {
+      setPlaceholder(samplePlaceholders[currentIndex]);
+      currentIndex = (currentIndex + 1) % samplePlaceholders.length;
+    }, 2000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [fetchBooks]);
+
+  const handleBookClick = (book) => {
+    navigate(`/bookDetails/${book._id}`, { state: { book } });
+  };
+
+  if (loading) {
+    return (
+      <div className="container py-5 text-center">
+        <div className="spinner-border text-success" role="status">
+          <span className="visually-hidden">Loading...</span>
         </div>
       </div>
-      {/* Responsive Footer */}
-      <Footer/>
-     </>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="container py-5">
+        <div className="alert alert-danger">{error}</div>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <div className="container py-5">
+        <h1 className="mb-4 text-black fw-bold">
+          Hello, what do you want to learn?
+        </h1>
+
+        <input
+          type="text"
+          className="form-control form-control-lg mb-4 border-success"
+          placeholder={`Try: ${placeholder}`}
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
+        />
+
+        {/* Image Slider */}
+        {sliderBooks.length > 0 && (
+          <div className="mb-5">
+            <h2 className="mb-3 text-black">Popular Picks</h2>
+            <Carousel indicators={false} interval={3000}>
+              {sliderBooks.map((book) => (
+                <Carousel.Item
+                  key={book._id}
+                  onClick={() => handleBookClick(book)}
+                  style={{ cursor: "pointer" }}
+                >
+                  <img
+                    className="d-block w-100"
+                    src={book.image || "https://via.placeholder.com/800x400"}
+                    alt={book.title}
+                    style={{
+                      height: "400px",
+                      objectFit: "cover",
+                      borderRadius: "10px",
+                    }}
+                  />
+                  <Carousel.Caption className="bg-dark bg-opacity-75 rounded p-3">
+                    <h3>{book.title}</h3>
+                    <p>by {book.author_name}</p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+              ))}
+            </Carousel>
+          </div>
+        )}
+
+        <div className="d-flex justify-content-between align-items-center mb-4">
+          <h2 className="text-black">Featured Books</h2>
+          <button
+            className="btn btn-success"
+            onClick={() => navigate("/books")}
+          >
+            View All
+          </button>
+        </div>
+
+        <div className="row g-4 mb-5">
+          {topBooks.length > 0 ? (
+            topBooks.map((book) => (
+              <div className="col-md-4" key={book._id}>
+                <div
+                  className="card h-100 shadow-sm"
+                  style={{ cursor: "pointer" }}
+                  onClick={() => handleBookClick(book)}
+                >
+                  <img
+                    src={book.image || "https://via.placeholder.com/300x400"}
+                    className="card-img-top"
+                    alt={book.title}
+                    style={{ height: "300px", objectFit: "cover" }}
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title text-success">{book.title}</h5>
+                    <h6 className="card-subtitle mb-2 text-muted">
+                      by {book.author_name}
+                    </h6>
+                    <p className="card-text">
+                      {book.description || "A captivating read."}
+                    </p>
+                  </div>
+                  <div className="card-footer">
+                    <button
+                      className="btn btn-sm btn-success w-100"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(book.purchase_link, "_blank");
+                      }}
+                    >
+                      Buy Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))
+          ) : (
+            <div className="col-12">
+              <div className="alert alert-info">
+                No featured books available
+              </div>
+            </div>
+          )}
+        </div>
+
+        <h2 className="mb-3 text-black">Must Explore</h2>
+        <div className="row g-4 mb-5">
+          {categories.map((cat, i) => (
+            <div className="col-6 col-md-3" key={i}>
+              <div
+                className="text-white text-center p-3 rounded shadow-sm"
+                style={{ backgroundColor: "#6f42c1" }}
+              >
+                {cat}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <Footer />
+    </>
   );
 };
 
