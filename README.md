@@ -98,7 +98,16 @@ As the website is called GoodReads Store , I wanted to use a affiliated link for
 
 ### Wireframes
 
-![Wireframe](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/bookwireframe.jpg)
+![Wireframe](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/Wire%201.jpg)
+
+
+![wireframe](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/wire%202.jpg)
+
+
+![wireframe](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/wire%204.jpg)
+
+
+
 
 Wireframes were created for mobile, tablet and desktop using balsamiq.
 
