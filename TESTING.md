@@ -43,12 +43,6 @@ As the JavaScript modules of the Code Institute Diploma did not cover local stor
 
 All other content for the site, such as Book details descriptions ,Reviews ,Book images and instructions were written by myself.
 
-### Acknowledgments
 
-I would like to acknowledge the following people:
-
-* Manish Pal - For Frontend development suggestions and code reviews.
-
-* Shiwani baghel - Frontend UI design and feedback.
 
 
