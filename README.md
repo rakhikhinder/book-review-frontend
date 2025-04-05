@@ -1,6 +1,6 @@
 # Book Review Website
 
-![ Book-review-frontend is a responsive React.js application](assets/images/book.jpg)
+[ Book-review-frontend is a responsive React.js application](assets/images/book.jpg)
 
 ## Project Overview
 
@@ -9,7 +9,7 @@ The **Frontend** for the **Book Review Website** allows users to explore, review
 
 
 ![GitHub contributors](https://img.shields.io/github/contributors/kera-cudmore/TheQuizArms?color=orange&style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/kera-cudmore/TheQuizArms?color=yellow&style=for-the-badge)
+![GitHub language count](https://img.shields.io/badge/languages-3-yellow?style=for-the-badge)
 ![JavaScript 95%](https://img.shields.io/badge/JavaScript-95%25-green?style=for-the-badge)
 ![W3C Validation](https://img.shields.io/w3c-validation/html?logoColor=blue&style=for-the-badge&targetUrl=https%3A%2F%2Fkera-cudmore.github.io%2FTheQuizArms%2F)
 
@@ -39,14 +39,11 @@ The **Frontend** for the **Book Review Website** allows users to explore, review
     * [How to Clone](#how-to-clone)
 
 * [Testing](#testing)
-  
-* [Credits](#credits)
-  * [Code Used](#code-used)
-  * [Content](#content)
-  * [Acknowledgments](#acknowledgments)
+
+* [Acknowledgments](#acknowledgments)
 
 - - -
-![Book-review-aap](Todo)
+[Book-review-aap](Todo)
 
 ## User Experience (UX)
 
@@ -90,11 +87,11 @@ Google Fonts was used to import the chosen fonts for use in the site.
 
 * For the Page Title I have used the google font [Almendra](https://fonts.google.com/specimen/Almendra?preview.text=The%20Quiz%20Arms%20THE%20QUIZ%20ARMS&preview.text_type=custom&query=almendra). Almendra is based on a calligraphy style and I have chosen it as it looks like the type of font you would see on a pubs name sign, slightly medieval looking and grand.
 
-![Almendra Font Example](documentation/almendra.webp)
+[Almendra Font Example](documentation/almendra.webp)
 
 * For the body of the page I have used the google font [Quicksand](https://fonts.google.com/specimen/Quicksand?preview.text=The%20Quiz%20Arms%20THE%20QUIZ%20ARMS&preview.text_type=custom&query=quicksand). QuickSand is a sans-serif font which has lovely clean lines. I have chosen to use a sans-serif font for the body of the page as studies have found that sans-serif fonts are generally more legible to read on a screen.
 
-![Quicksand Font Example](documentation/quicksand.webp)
+[Quicksand Font Example](documentation/quicksand.webp)
 
 ### Imagery
 
@@ -104,8 +101,8 @@ As the website is called The Book-Review , I wanted to use a affiliated link for
 
 Wireframes were created for mobile, tablet and desktop using balsamiq.
 
-![Home Page](https://github.com/rakhikhinder/book-review-frontend/blob/main/frontend/src/assets/images/image.png)
-![Book details](Todo)
+[Home Page](https://github.com/rakhikhinder/book-review-frontend/blob/main/frontend/src/assets/images/image.png)
+[Book details](Todo)
 
 
 ### Features
@@ -125,20 +122,20 @@ All Pages on the website are responsive and have:
 
 The Home page display the slide in the hero sections that having books and also in the body having Explore more books and there are collection of books that all are responsive and footer section having contact links.
 
-![Home page image](Todo)
+[Home page image](Todo)
 
 
 #### Book details section 
 
 The book details section having the description of books when in home page we proceed to next section where the books images,with price,vote and unvote ,ratings and review present.
 
-![Book details ](Todo)
+[Book details ](Todo)
 
 #### The 404 Error Page
 
 The 404 error page displays the sites name as a title. This also acts as a link back to the home page. Within the page container there is a sorry message explaining to the user that there has been an error directing them to the page they were looking for. The user is then given a choice of three buttons to redirect them to other pages on the site, the home page, the Book description.
 
-![Error page image](Todo)
+[Error page image](Todo)
 
 
 #### Future Implementations
@@ -173,7 +170,7 @@ As the site relies on colour to display to the user whether an answer is correct
 
 ### Languages Used
 
-HTML, CSS, Javascript,Reactjs,Python
+HTML, CSS, Javascript
 
 ### Frameworks, Libraries & Programs Used
 
