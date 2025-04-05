@@ -50,7 +50,7 @@ function App() {
           zIndex: 999,
         }}
       >
-        <h3 className="text-white m-0">Apple Books</h3>
+        <h3 className="text-white m-0"> GoodReads Store</h3>
         {isLoggedIn ? (
           <div className="dropdown">
             <button

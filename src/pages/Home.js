@@ -89,7 +89,7 @@ const Home = () => {
         {sliderBooks.length > 0 && (
           <div className="mb-5">
             <h2 className="mb-3 text-black">Popular Picks</h2>
-            <Carousel indicators={false} interval={3000}>
+            <Carousel indicators={false} interval={4000}>
               {sliderBooks.map((book) => (
                 <Carousel.Item
                   key={book._id}
