@@ -51,8 +51,14 @@ const BookDetails = () => {
                                 <FaThumbsDown /> {downvotes}
                             </Button>
                         </div>
-                        
+                        <a
+                           href="https://www.amazon.in/Books/b?ie=UTF8&node=976389031"
+                            target="_blank"
+                           rel="noopener noreferrer"
+                            style={{ textDecoration: "none" }}
+                         >
                         <Button variant="primary" size="lg">Buy Now</Button>
+                        </a>
                     </Col>
                 </Row>
                 
