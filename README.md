@@ -39,8 +39,6 @@ The **Frontend** for the **Book Review Website** allows users to explore, review
     * [How to Clone](#how-to-clone)
 
 * [Testing](#testing)
-  * [Solved Bugs](#solved-bugs)
-  * [Known Bugs](#known-bugs)
   
 * [Credits](#credits)
   * [Code Used](#code-used)
