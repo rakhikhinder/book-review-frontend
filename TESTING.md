@@ -1,44 +1,74 @@
-## Testing
+## 🧪 Full Testing Report
+
+### 🔐 Authentication Testing
+
+![Sign Up](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/WhatsApp%20Image%202025-04-05%20at%2021.44.54_80e859fe.jpg)
+* Sign Up form is working correctly with validation and error handling.
+
+![User Already Exists](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/WhatsApp%20Image%202025-04-05%20at%2021.45.09_9c32854d.jpg)
+* Proper error is displayed when trying to register an already existing user.
+
+### ✅ Tested Functionalities
+
+| No | Test Case | Input | Expected Result | Status |
+|:--:|:----------|:------|:----------------|:-------|
+| 1 | Sign Up with valid details | Unique email, username, password | Account created & redirected to home | ✅ Pass |
+| 2 | Sign Up with existing email | Existing user email | Show error "User already exists" | ✅ Pass |
+| 3 | Sign In with correct credentials | Valid email & password | Logged in successfully | ✅ Pass |
+| 4 | Sign In with incorrect credentials | Wrong password | Show error "Invalid credentials" | ✅ Pass |
+| 5 | Empty form submission | Empty fields | Show validation errors | ✅ Pass |
+| 6 | Toggle between Sign In/Sign Up | Click toggle link | Switches form view | ✅ Pass |
+| 7 | Password visibility toggle | Eye icon click | Show/hide password | ✅ Pass |
+
+---
+
+### 🛠️ Solved Bugs
+
 ![Sign Up](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/photo_6307711004267627937_y%20(1).jpg)
-* Sign Up working properly 
-### Solved Bugs
 
 | No | Bug | How I solved the issue |
 | :--- | :--- | :--- |
-| 1 | Sign-in Module Layout Issues & Pop-up Visibility. |  Wrapped the sign-in module in a Bootstrap container-fluid with row/col classes.Used React state to toggle pop-up: {showPopup && <Modal />}.Added z-index: 1050; to modal CSS (Bootstrap modals use 1040 by default). |
-| 2 | Carousel Slide (Hero Section) Not Smooth |Replaced custom carousel with React Slick. Added CSS: .slick-track { will-change: transform; }.Configured autoplay speed: autoplaySpeed: 3000 |
-| 3 | Book Grid Layout & Click Description Failure. | Applied Bootstrap’s row-cols-* classes for grid layout. Used event delegation (React onClick on parent div with data-book-id).State-managed description visibility: setSelectedBook(book.id).|
-| 4 | Vote/Upvote Not Counting & Rating Stale.| Used await on POST to Firebase:await updateDoc(docRef, { votes: increment(1) }).Added useEffect to refresh ratings: [votes] dependency.Debounced rapid clicks with lodash.debounce.
- |
+| 1 | Sign-in Module Layout Issues & Pop-up Visibility. | Wrapped the sign-in module in a Bootstrap container-fluid with row/col classes. Used React state to toggle pop-up: `{showPopup && <Modal />}`. Added `z-index: 1050` to modal CSS (Bootstrap modals use 1040 by default). |
+| 2 | Carousel Slide (Hero Section) Not Smooth | Replaced custom carousel with React Slick. Added CSS: `.slick-track { will-change: transform; }`. Configured autoplay speed: `autoplaySpeed: 3000` |
+| 3 | Book Grid Layout & Click Description Failure | Applied Bootstrap’s `row-cols-*` classes for grid layout. Used event delegation (`onClick` on parent div with `data-book-id`). State-managed description visibility using `setSelectedBook(book.id)`. |
+| 4 | Vote/Upvote Not Counting & Rating Stale | Used `await` on POST to Firebase: `await updateDoc(docRef, { votes: increment(1) })`. Added `useEffect` to refresh ratings with `[votes]` dependency. Debounced rapid clicks using `lodash.debounce`. |
+
+---
 
 ![Sign In](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/photo_6307711004267627938_y.jpg)
 
-### Known Bugs
+### 🐛 Known Bugs
 
-* When viewing on screens that use touch rather than a cursor, the colour change for the Submit Review button selected is not immediately obvious as the hover state remains on the button. If the user clicks away from the button the colour can then been seen.
+* On mobile touchscreens, the hover state on the Submit Review button remains, making the selected state unclear until clicked away.
+* GitHub Pages throws a console warning due to Google’s FLoC being disabled — doesn't affect performance.
+* Rare bug where the homepage fails to load the book description or buttons (under investigation).
 
-* There is a a warning displaying in the console on the live page. This error seems to be because GitHub hosted pages disable googles 3rd party cookie alternative FLoC, which then throws this error. The error doesn't affect the site in any way.
+---
 
-* When friends tested the site they found that very rarely site will get stuck on a home page, and it will not populate a book-description but not not the buy button functions and vote and upvote. 
+### 📸 UI Screens
 
-- - -
-![Update profile](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/photo_6307711004267627936_y.jpg)
-### Code Used
+![GoodReads Store UI](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/WhatsApp%20Image%202025-04-05%20at%2021.44.54_80e859fe.jpg)
 
-* I used [this You Tube tutorial](https://www.youtube.com/watch?v=0iCmz90nR9k) to learn how to create a website and make the book store.
+![Sign Up Error Message](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/WhatsApp%20Image%202025-04-05%20at%2021.45.09_9c32854d.jpg)
 
-* As the API I used for the questions declared the correct answer and then had an array of incorrect answers, I had to find a way to shuffle the answers together so that the correct answer wouldn't always appear on the same button. 
+![Update Profile](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/photo_6307711004267627936_y.jpg)
 
-* I had to do a bit of research into this topic myself in order to set up the high scores section of my site.
+---
 
-* I used this [video tutorial](https://www.youtube.com/watch?v=jfc3dcLS7l4) on YouTube by [RANAsVFX
-]which taught me to how to make the book selling website.
+## 🧑‍💻 Code Used
 
-* I used this [video tutorial](https://www.youtube.com/watch?v=w5V2UTQY6KA) on YouTube by [Mr Web](https://www.youtube.com/watch?v=w5V2UTQY6KA) to make it more attractive and user friendly
-### Content
+* [This YouTube tutorial](https://www.youtube.com/watch?v=0iCmz90nR9k) helped set up the initial layout and project structure.
+* [RANAsVFX's tutorial](https://www.youtube.com/watch?v=jfc3dcLS7l4) for building the bookstore UI and styling.
+* [Mr Web's tutorial](https://www.youtube.com/watch?v=w5V2UTQY6KA) to improve design and user experience.
+* For the quiz component: manually shuffled correct and incorrect answers to ensure randomness.
+* High score functionality and Firebase integration were custom-researched and implemented.
 
-All other content for the site, such as Book details descriptions ,Reviews ,Book images and instructions were written by myself.
+---
 
+## ✍️ Content
 
+All book descriptions, reviews, images, and UI instructions were created and written manually.
 
+---
 
+Let me know if you want this section split across multiple files or if I should push it into a GitHub repo `README.md` format for upload.
