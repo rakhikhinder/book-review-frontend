@@ -64,6 +64,29 @@
 * High score functionality and Firebase integration were custom-researched and implemented.
 
 ---
+## 🚀 Performance Result While Testing
+
+We used [Google PageSpeed Insights](https://pagespeed.web.dev/) to evaluate the performance, accessibility, best practices, and SEO of the website. The site was tested in both mobile and desktop views.
+
+### 📱 Mobile View
+
+![Mobile Performance](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/photo_6307711004267628029_y.jpg)
+
+* **Performance:** Optimized for decent mobile experience, loading time is acceptable.
+* **Accessibility:** Good contrast ratios and labels are in place.
+* **Best Practices:** Follows core web vitals and modern web standards.
+* **SEO:** Meta tags and structure are present, with minor improvements possible.
+
+### 💻 Desktop View
+
+![Desktop Performance](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/photo_6307711004267628030_y.jpg)
+
+* **Performance:** Excellent load times and rendering speed on desktop.
+* **Accessibility:** Fully accessible, compliant with ARIA roles and semantic tags.
+* **Best Practices:** HTTPS usage, optimized images, and minimized JavaScript.
+* **SEO:** Fully optimized for search engines with proper meta data.
+
+> ✅ Overall, the site performs well across all categories with minor improvements recommended for mobile-specific optimizations like reducing render-blocking scripts and leveraging lazy loading more effectively.
 
 ## ✍️ Content
 
