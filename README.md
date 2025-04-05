@@ -98,11 +98,10 @@ As the website is called GoodReads Store , I wanted to use a affiliated link for
 
 ### Wireframes
 
-![Wireframe]()
+![Wireframe](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/bookwireframe.jpg)
 
 Wireframes were created for mobile, tablet and desktop using balsamiq.
 
-[Home Page](https://github.com/rakhikhinder/book-review-frontend/blob/main/frontend/src/assets/images/image.png)
 ![Book Buynow](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/photo_6307711004267627940_y.jpg)
 
 
