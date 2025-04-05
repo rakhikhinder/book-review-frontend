@@ -43,7 +43,7 @@ The **Frontend** for the **GoodReads Store Website** allows users to explore, re
 * [Acknowledgments](#acknowledgments)
 
 - - -
-![GoodReads Store](Todo)
+![GoodReads Store](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/photo_6307711004267627942_y.jpg))
 
 ## User Experience (UX)
 
@@ -98,10 +98,12 @@ As the website is called GoodReads Store , I wanted to use a affiliated link for
 
 ### Wireframes
 
+![Wireframe]()
+
 Wireframes were created for mobile, tablet and desktop using balsamiq.
 
 [Home Page](https://github.com/rakhikhinder/book-review-frontend/blob/main/frontend/src/assets/images/image.png)
-[Book details](Todo)
+![Book Buynow](https://github.com/rakhikhinder/book-review-frontend/blob/main/src/assets/images/photo_6307711004267627940_y.jpg)
 
 
 ### Features
